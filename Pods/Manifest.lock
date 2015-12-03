@@ -1,0 +1,42 @@
+PODS:
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BmobSDK (1.6.5)
+  - FlatUIKit (1.6.2)
+  - Masonry (0.6.3)
+  - MBProgressHUD (0.9.1)
+  - MJRefresh (3.0.2)
+  - RESideMenu (4.0.7)
+
+DEPENDENCIES:
+  - BlocksKit
+  - BmobSDK
+  - FlatUIKit
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - RESideMenu
+
+SPEC CHECKSUMS:
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  BmobSDK: 9928a9135a3a7823c6d8bd2bcd9baffeb8e6289a
+  FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MJRefresh: 85377dc8c70395cf329e102a5c55505ef387c2e1
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+
+COCOAPODS: 0.39.0

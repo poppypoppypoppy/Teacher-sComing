@@ -1,0 +1,55 @@
+//
+//  header.pch
+//  Teacher'sComing
+//
+//  Created by 杨海凌 on 15/11/5.
+//  Copyright © 2015年 YHL. All rights reserved.
+//
+
+#ifndef header_pch
+#define header_pch
+
+/*Xcode7以下版本需要添加下方宏定义 支持AF*/
+#ifdef TARGET_OS_IOS
+
+#define TARGET_OS_IOS TARGET_OS_IPHONE
+
+#endif
+
+#ifndef TARGET_OS_WATCH
+
+#define TARGET_OS_WATCH
+
+#endif
+/*Xcode7以下版本需要添加上方宏定义 支持AF*/
+
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "AppDelegate.h"
+
+//用于存放全局宏定义 或者 静态字符串
+#import "Constants.h"
+
+//自定义毛玻璃类
+#import "GlassView.h"
+//
+///** 自定义工厂类，功能类。 其中存放各种自定义方法 */
+//#import "Factory.h"
+
+//链式书写AutoLayout的第三方类库
+#import <Masonry.h>
+
+//数据库与服务器bmob
+#import <BmobSDK/Bmob.h>
+
+#import <MBProgressHUD.h>       //实现安卓toast风格提示，弹出提示框架
+
+//#import <RESideMenu.h>          //QQ的左侧菜单风格
+
+/* 改变系统的target+selector模式为 block模式。 带来紧凑的代码风格，高效率的回调执行 */
+#import <BlocksKit.h>
+#import <BlocksKit+MessageUI.h>
+#import <BlocksKit+UIKit.h>
+
+#endif /* header_pch */

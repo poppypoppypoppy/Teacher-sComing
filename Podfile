@@ -1,0 +1,8 @@
+pod 'BmobSDK'
+pod 'Masonry'
+pod 'FlatUIKit'
+pod 'BlocksKit'
+pod 'RESideMenu'
+pod 'MBProgressHUD'
+pod 'MJRefresh'
+pod 'MBProgressHUD'
