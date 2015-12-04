@@ -9,15 +9,14 @@
 #import "tripModel.h"
 
 @implementation tripModel
--(instancetype)initWithIconIV:(UIImage *)imageIV time:(NSString *)time trip:(NSString *)trip{
+-(instancetype)initWithTime:(NSString *)time trip:(NSString *)trip{
     if (self = [super init]) {
-        self.iconIV = imageIV;
         self.time = time;
         self.trip = trip;
     }
     return self;
 }
-+(instancetype)tripWithIconIV:(UIImage *)imageIV time:(NSString *)time trip:(NSString *)trip{
-    return [[tripModel alloc]initWithIconIV:imageIV time:time trip:trip];
++(instancetype)tripWithTime:(NSString *)time trip:(NSString *)trip{
+    return [[tripModel alloc]initWithTime:time trip:trip];
 }
 @end

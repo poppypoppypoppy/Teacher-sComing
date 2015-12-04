@@ -18,6 +18,8 @@
     [super viewDidLoad];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(addFinish)];
     self.navigationItem.rightBarButtonItem = rightItem;
+//设置填费用时弹出数字键盘
+    self.moneyTF.keyboardType =  UIKeyboardTypeNumberPad;
 }
 -(void)addFinish{
     if (self.isIN == 1) {

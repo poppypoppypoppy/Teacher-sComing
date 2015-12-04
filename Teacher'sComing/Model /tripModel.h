@@ -11,7 +11,7 @@
 @interface tripModel : NSObject
 @property(nonatomic,strong)NSString *trip;
 @property(nonatomic,strong)NSString *time;
-@property(nonatomic,strong)UIImage *iconIV;
--(instancetype)initWithIconIV:(UIImage *)imageIV time:(NSString *)time trip:(NSString *)trip;
-+(instancetype)tripWithIconIV:(UIImage *)imageIV time:(NSString *)time trip:(NSString *)trip;
+
+-(instancetype)initWithTime:(NSString *)time trip:(NSString *)trip;
++(instancetype)tripWithTime:(NSString *)time trip:(NSString *)trip;
 @end

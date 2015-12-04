@@ -11,7 +11,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *detail;
 @property (weak, nonatomic) IBOutlet UILabel *money;
-@property (weak, nonatomic) IBOutlet UIImageView *iconIV;
+
 
 @end
 
@@ -19,7 +19,7 @@
 - (void)setMessage:(billModel *)message {
     _message = message;
 
-    self.iconIV.image = self.message.iconIV;
+
     self.time.text = self.message.time;
     self.detail.text = self.message.detail;
     self.money.text = self.message.money;

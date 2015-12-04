@@ -21,6 +21,7 @@
     [super viewDidLoad];
    self.title = @"FoundAdd";
 
+
 }
 - (IBAction)finishBtn:(id)sender {
     BmobObject  *found = [BmobObject objectWithClassName:@"found"];

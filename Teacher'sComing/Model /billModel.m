@@ -9,16 +9,15 @@
 #import "billModel.h"
 
 @implementation billModel
--(instancetype)initWithIconIV:(UIImage *)imageIV time:(NSString *)time money:(NSString *)money detail:(NSString *)detail{
+-(instancetype)initWithTime:(NSString *)time money:(NSString *)money detail:(NSString *)detail{
     if (self = [super init]) {
-        self.iconIV = imageIV;
         self.time = time;
         self.money = money;
         self.detail = detail;
     }
     return self;
 }
-+(instancetype)billWithIconIV:(UIImage *)imageIV time:(NSString *)time money:(NSString *)money detail:(NSString *)detail{
-    return [[billModel alloc]initWithIconIV:imageIV time:time money:money detail:detail];
++(instancetype)billWithTime:(NSString *)time money:(NSString *)money detail:(NSString *)detail{
+    return [[billModel alloc]initWithTime:time money:money detail:detail];
 }
 @end

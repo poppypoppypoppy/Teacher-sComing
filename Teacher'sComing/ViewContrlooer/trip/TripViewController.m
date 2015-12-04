@@ -13,6 +13,7 @@
 @interface TripViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *messageArray;
+@property(nonatomic,strong)UIImage *image;
 @end
 
 @implementation TripViewController
@@ -49,12 +50,18 @@
                             [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
                             NSString *createdAt = [obj objectForKey:@"createdAt"];
                             
-                            NSURL *imageURL = [NSURL URLWithString:dicLogin[@"icon"]];
-                            NSData *data = [NSData dataWithContentsOfURL:imageURL];
-                            UIImage *image = [UIImage imageWithData:data];
-                            
-                            tripModel *message = [tripModel tripWithIconIV:image time:createdAt trip:detail];
+//                            NSBlockOperation *operation1 = [NSBlockOperation blockOperationWithBlock:^{
+//                                NSURL *imageURL = [NSURL URLWithString:dicLogin[@"icon"]];
+//                                NSData *data = [NSData dataWithContentsOfURL:imageURL];
+//                               self.image = [UIImage imageWithData:data];
+//       
+//                            }];
+//                            NSOperationQueue *queue = [NSOperationQueue new];
+//                            [queue addOperation:operation1];
+                            tripModel *message = [tripModel tripWithTime:createdAt trip:detail];
                             [_messageArray addObject:message];
+        
+ 
                         }
                         [self.tableView reloadData];
                     }
@@ -71,7 +78,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TripCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripCell"];
-    
+
     cell.message = [self.messageArray objectAtIndex:indexPath.row];
     return cell;
 }
@@ -87,8 +94,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
+//        [self searchMessageInDB];
+//        
+//    }];
+//    [self.tableView.mj_header  beginRefreshing];
+//    
+    
+   
     self.tableView.tableFooterView = [UIView new];
-    self.tableView.userInteractionEnabled = NO;
+   //self.tableView.userInteractionEnabled = NO;
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"add" style:UIBarButtonItemStyleDone target:self action:@selector(addVC)];
     self.navigationItem.rightBarButtonItem = rightItem;

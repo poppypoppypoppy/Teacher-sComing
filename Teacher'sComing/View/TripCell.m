@@ -10,15 +10,13 @@
 @interface TripCell ()
 @property (weak, nonatomic) IBOutlet UILabel *tripDetailLB;
 @property (weak, nonatomic) IBOutlet UILabel *timeLB;
-@property (weak, nonatomic) IBOutlet UIImageView *iconIV;
 
 @end
 
 @implementation TripCell
 - (void)setMessage:(tripModel *)message {
     _message = message;
- 
-    self.iconIV.image = self.message.iconIV;
+
     
     self.timeLB.text = self.message.time;
     

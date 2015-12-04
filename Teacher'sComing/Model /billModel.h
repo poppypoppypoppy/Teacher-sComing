@@ -11,8 +11,7 @@
 @interface billModel : NSObject
 @property(nonatomic,strong)NSString *money;
 @property(nonatomic,strong)NSString *detail;
-@property(nonatomic,strong)UIImage *iconIV;
 @property(nonatomic,strong)NSString *time;
--(instancetype)initWithIconIV:(UIImage *)imageIV time:(NSString *)time money:(NSString *)money detail:(NSString *)detail;
-+(instancetype)billWithIconIV:(UIImage *)imageIV time:(NSString *)time money:(NSString *)money detail:(NSString *)detail;
+-(instancetype)initWithTime:(NSString *)time money:(NSString *)money detail:(NSString *)detail;
++(instancetype)billWithTime:(NSString *)time money:(NSString *)money detail:(NSString *)detail;
 @end

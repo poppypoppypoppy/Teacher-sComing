@@ -134,26 +134,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yuan.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-dq-Z0E">
-                                                    <rect key="frame" x="8" y="10" width="44" height="49.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pla.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-dq-Z0E">
+                                                    <rect key="frame" x="4" y="18" width="56" height="36.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEW-T8-mAn">
-                                                    <rect key="frame" x="70" y="10" width="242" height="35.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hft-JK-Jzz">
-                                                    <rect key="frame" x="154" y="43" width="158" height="20.5"/>
+                                                    <rect key="frame" x="154" y="46" width="158" height="17.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEW-T8-mAn">
+                                                    <rect key="frame" x="75" y="17" width="169" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="iconIV" destination="Zlf-dq-Z0E" id="qzj-rn-H4E"/>
                                             <outlet property="timeLB" destination="hft-JK-Jzz" id="3dD-hX-A5A"/>
                                             <outlet property="tripDetailLB" destination="PEW-T8-mAn" id="nmJ-lO-W8A"/>
                                         </connections>
@@ -167,10 +166,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="arl-iW-9Jb" firstAttribute="top" secondItem="TWB-fD-F5W" secondAttribute="top" id="Eih-6X-ENL"/>
-                            <constraint firstAttribute="trailing" secondItem="arl-iW-9Jb" secondAttribute="trailing" id="Kpt-QA-P9D"/>
-                            <constraint firstAttribute="bottom" secondItem="arl-iW-9Jb" secondAttribute="bottom" id="gBr-2H-i3z"/>
-                            <constraint firstItem="arl-iW-9Jb" firstAttribute="leading" secondItem="TWB-fD-F5W" secondAttribute="leading" id="oz7-Kp-8SJ"/>
+                            <constraint firstItem="arl-iW-9Jb" firstAttribute="top" secondItem="TWB-fD-F5W" secondAttribute="top" id="5Yy-Dm-hWK"/>
+                            <constraint firstAttribute="trailing" secondItem="arl-iW-9Jb" secondAttribute="trailing" id="V3t-A7-dNR"/>
+                            <constraint firstItem="arl-iW-9Jb" firstAttribute="leading" secondItem="TWB-fD-F5W" secondAttribute="leading" id="tGp-wu-Cgl"/>
+                            <constraint firstAttribute="bottom" secondItem="arl-iW-9Jb" secondAttribute="bottom" id="ybc-Wl-wjf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="行程" id="SPw-9I-24X"/>
@@ -194,17 +193,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Swx-oq-Im8">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Swx-oq-Im8">
+                                <rect key="frame" x="2" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-h1-ilJ">
-                                <rect key="frame" x="149" y="94" width="26" height="21"/>
+                                <rect key="frame" x="141" y="80" width="42" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AEO-GA-Hey">
-                                <rect key="frame" x="69" y="153" width="183" height="77"/>
+                                <rect key="frame" x="74" y="148" width="172" height="65"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -949,16 +948,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gY7-w5-pq8">
-                                                    <rect key="frame" x="192" y="45" width="115" height="24.5"/>
+                                                    <rect key="frame" x="130" y="52" width="177" height="17.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yuan.png" translatesAutoresizingMaskIntoConstraints="NO" id="IjA-Fw-uTj">
-                                                    <rect key="frame" x="8" y="7" width="52" height="54.5"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhu-cn-2ao">
-                                                    <rect key="frame" x="245" y="11" width="62" height="27"/>
+                                                    <rect key="frame" x="236" y="17" width="71" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -969,12 +965,14 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="money.png" translatesAutoresizingMaskIntoConstraints="NO" id="IjA-Fw-uTj">
+                                                    <rect key="frame" x="17" y="11" width="37" height="49.5"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="detail" destination="GNU-s5-k0f" id="M2z-K2-fA3"/>
-                                            <outlet property="iconIV" destination="IjA-Fw-uTj" id="qNQ-18-OKf"/>
                                             <outlet property="money" destination="uhu-cn-2ao" id="4p9-RF-7He"/>
                                             <outlet property="time" destination="gY7-w5-pq8" id="vDK-dl-Gea"/>
                                         </connections>
@@ -1297,7 +1295,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjd-Nq-RhJ">
                                                     <rect key="frame" x="40" y="24" width="82" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1323,13 +1321,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-0I-6rC">
                                                     <rect key="frame" x="42" y="10" width="74" height="25.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybz-RK-tfU">
                                                     <rect key="frame" x="186" y="8" width="114" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1441,8 +1439,9 @@
         <image name="22.jpg" width="132" height="220"/>
         <image name="background.png" width="614" height="1088"/>
         <image name="lu_meitu_1.png" width="505" height="188"/>
+        <image name="money.png" width="120" height="178"/>
+        <image name="pla.png" width="202" height="127"/>
         <image name="shizi.png" width="260" height="293"/>
         <image name="sun3.png" width="30" height="30"/>
-        <image name="yuan.png" width="225" height="206"/>
     </resources>
 </document>

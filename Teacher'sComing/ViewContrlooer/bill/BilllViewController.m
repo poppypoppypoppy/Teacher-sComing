@@ -54,12 +54,12 @@
                             NSString *createdAt = [obj objectForKey:@"createdAt"];
                             
                             NSString *money = [obj objectForKey:@"money"];
+//                            
+//                            NSURL *imageURL = [NSURL URLWithString:dicLogin[@"icon"]];
+//                            NSData *data = [NSData dataWithContentsOfURL:imageURL];
+//                            UIImage *image = [UIImage imageWithData:data];
                             
-                            NSURL *imageURL = [NSURL URLWithString:dicLogin[@"icon"]];
-                            NSData *data = [NSData dataWithContentsOfURL:imageURL];
-                            UIImage *image = [UIImage imageWithData:data];
-                            
-                            billModel *message = [billModel billWithIconIV:image time:createdAt money:money detail:detail];
+                            billModel *message = [billModel billWithTime:createdAt money:money detail:detail];
                             [_messageArray addObject:message];
                         }
                         [self.tableView reloadData];
