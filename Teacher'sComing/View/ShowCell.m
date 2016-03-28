@@ -23,27 +23,16 @@
 - (void)setMessage:(TeacherComingModel *)message {
     _message = message;
 
-    [self.iconBtn setImage:self.message.iconIM forState:0];
+    [self.iconBtn setBackgroundImage:self.message.iconIM forState:0];
     
     self.titleLB.text = self.message.title;
     
-    self.timeLB.text = self.message.time;
+    self.timeLB.text = self.message.createtime;
     
     self.addressLB.text = self.message.address;
     
     self.moneyLB.text = self.message.money;
     
-}
-
-
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

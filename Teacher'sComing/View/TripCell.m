@@ -7,10 +7,10 @@
 //
 
 #import "TripCell.h"
+
 @interface TripCell ()
 @property (weak, nonatomic) IBOutlet UILabel *tripDetailLB;
 @property (weak, nonatomic) IBOutlet UILabel *timeLB;
-
 @end
 
 @implementation TripCell
@@ -23,14 +23,7 @@
     self.tripDetailLB.text = self.message.trip;
     
 }
-- (void)awakeFromNib {
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
-}
 
 @end

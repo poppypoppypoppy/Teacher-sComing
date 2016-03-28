@@ -51,8 +51,35 @@
 #import <BlocksKit.h>
 #import <BlocksKit+MessageUI.h>
 #import <BlocksKit+UIKit.h>
-
+#import "NSObject+Common.h"
 
 #import <MJRefresh.h>    //优秀的滚动视图头部和脚步刷新效果
+
+
+#import <SWTableViewCell.h>     //Cell滑动，出现多个功能按钮
+
+#import <CocoaLumberjack.h> //优秀的替换NSLog的第三方，更加省资源，并且可以定义打印级别
+#ifdef DEBUG
+static const int ddLogLevel = DDLogLevelVerbose;
+#else
+static const int ddLogLevel = DDLogLevelError;
+#endif
+
+
+//#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+//
+//#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+//
+//#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+//
+//#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+//
+//#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+//
+//#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+//
+//#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+//
+//#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
 #endif /* header_pch */

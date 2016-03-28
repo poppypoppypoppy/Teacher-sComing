@@ -16,16 +16,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(addFinish)];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    UIButton *btn= [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(285, 7, 35, 35)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"OK"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(addFinish) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+
 }
 -(void)addFinish{
-    [self addMessage];
-    //    [self.navigationController pushViewController:kVCFromSb(@"TripViewController", @"Main") animated:YES];
-    if ([self.delegate respondsToSelector:@selector(VCAddMessageSuccessUpdateMessage:)]) {
-        NSLog(@"%s",__FUNCTION__);
-        [self.delegate VCAddMessageSuccessUpdateMessage:self];
+    if ([self.tripDetailTF.text isEqualToString:@""]) {
+        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode=MBProgressHUDModeText;//只显示label
+        hud.labelText = @"详情不能为空！";
+        [hud hide:YES afterDelay:2];
+    }else{
+        [self addMessage];
+//        [self.navigationController popViewControllerAnimated:YES];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"添加成功";
+        [hud hide:YES afterDelay:2];
+        
+//        if ([self.delegate respondsToSelector:@selector(VCAddMessageSuccessUpdateMessage:)]) {
+//            NSLog(@"%s",__FUNCTION__);
+//            [self.delegate VCAddMessageSuccessUpdateMessage:self];
+//        }
     }
+
 }
 -(void)addMessage{
     BmobObject  *tripInfo = [BmobObject objectWithClassName:@"tripInfo"];
@@ -44,10 +61,20 @@
                         NSLog(@"%@",error);
                     }else{
                         NSLog(@"finish");
+                        NSLog(@"%@",tripInfo);
                     }
                 }];
             }
         }
     }];
 }
+- (IBAction)closeKB:(UITextField *)sender {
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+
+
+
 @end

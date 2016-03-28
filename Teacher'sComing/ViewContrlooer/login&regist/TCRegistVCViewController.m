@@ -8,7 +8,7 @@
 
 #import "TCRegistVCViewController.h"
 #import "TCLoginViewController.h"
-
+//#import "TCInfoViewController.h"
 @interface TCRegistVCViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTF;
@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [GlassView glassView:self.imageView rectX:0 rectY:0 rectW:self.imageView.frame.size.width rectH:self.imageView.frame.size.height];
+//    [GlassView glassView:self.imageView rectX:0 rectY:0 rectW:self.imageView.frame.size.width rectH:self.imageView.frame.size.height];
     self.count = 0;
     
 }
@@ -74,11 +74,11 @@
             if (error) {
                 NSLog(@"%@",error);
             }else{
-                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"注册成功" message:@"编辑个人信息" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"注册成功" message:@"请登录编辑个人信息" preferredStyle:UIAlertControllerStyleAlert];
                 [self presentViewController:alertC animated:YES completion:nil];
                 UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                     [self dismissViewControllerAnimated:YES completion:nil];
-                    
+//                    [self presentViewController:kVCFromSb(@"TCInfoViewController", @"Main") animated:YES completion:nil];
                 }];
                 [alertC addAction:sureAction];
             }
@@ -136,7 +136,7 @@
                     NSPredicate *check = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",str];
                     int x = [check evaluateWithObject:self.usernameTF.text];
                     if (x == 1) {
-                        self.usernameLB.textColor = [UIColor greenColor];
+                        self.usernameLB.textColor = [UIColor redColor];
                         self.usernameLB.text = @"OK";
                     }else{
                         self.usernameLB.text = @"该用户名格式不正确";
@@ -167,7 +167,7 @@
         NSPredicate *check = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",str];
         int x = [check evaluateWithObject:self.pwdTF.text];
         if (x == 1) {
-            self.pwdLB.textColor = [UIColor greenColor];
+            self.pwdLB.textColor = [UIColor redColor];
             self.pwdLB.text = @"OK";
         }else{
             self.pwdLB.textColor = [UIColor redColor];
@@ -186,7 +186,7 @@
         self.checkPwdLB.textColor = [UIColor redColor];
         self.checkPwdLB.text = @"密码不一致";
     }else {
-        self.checkPwdLB.textColor = [UIColor greenColor];
+        self.checkPwdLB.textColor = [UIColor redColor];
         self.checkPwdLB.text = @"OK";
     }
 }

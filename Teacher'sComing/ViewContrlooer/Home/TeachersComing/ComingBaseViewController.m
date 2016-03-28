@@ -8,7 +8,8 @@
 
 #import "ComingBaseViewController.h"
 #import "ComingShowViewController.h"
-#import "ComingSearchViewController.h"
+#import "ComingSearchResultViewController.h"
+//#import "ComingSearchCSViewController.h"
 #import "ComingAddViewController.h"
 #import "HomeViewController.h"
 
@@ -33,7 +34,7 @@
 {
     navRightButton= [UIButton buttonWithType:UIButtonTypeCustom];
     [navRightButton setFrame:CGRectMake(281, 7, 30, 30)];
-    [navRightButton setBackgroundImage:[UIImage imageNamed:@"c_nav-60-60"] forState:UIControlStateNormal];
+    [navRightButton setBackgroundImage:[UIImage imageNamed:@"pla"] forState:UIControlStateNormal];
     [navRightButton addTarget:self action:@selector(rightNavBtn) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:navRightButton];
@@ -111,7 +112,8 @@
     _vFX = _mmMainFX;
     _vFY = _mmMainFY;
     _clearImg = [[UIImageView alloc]initWithFrame:CGRectMake(_vFX, _vFY, 320, 460+88-44)];
-    _clearImg.backgroundColor = kRGBColor(224, 224, 166);
+//    _clearImg.backgroundColor = kRGBColor(224, 224, 166);
+        _clearImg.backgroundColor = kRGBColor(248, 204, 107);
     _clearImg.hidden = YES;
     
     _vFX = _mmMainFX;
@@ -119,19 +121,19 @@
     
     _lcksBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_lcksBtn setFrame:CGRectMake(202, _vFY, 100, 40)];
-    [_lcksBtn setTitle:@"My_Menu_1" forState:UIControlStateNormal];
+    [_lcksBtn setTitle:@"信息" forState:UIControlStateNormal];
     
     _wjxxBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_wjxxBtn setFrame:CGRectMake(202, _vFY, 100, 40)];
-    [_wjxxBtn setTitle:@"My_Menu_2" forState:UIControlStateNormal];
+    [_wjxxBtn setTitle:@"添加" forState:UIControlStateNormal];
     
     _jkpgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_jkpgBtn setFrame:CGRectMake(202, _vFY, 100, 40)];
-    [_jkpgBtn setTitle:@"My_Menu_3" forState:UIControlStateNormal];
+    [_jkpgBtn setTitle:@"搜索" forState:UIControlStateNormal];
     
     _jkjhBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_jkjhBtn setFrame:CGRectMake(202, _vFY, 100, 40)];
-    [_jkjhBtn setTitle:@"My_Menu_4" forState:UIControlStateNormal];
+    [_jkjhBtn setTitle:@"主页" forState:UIControlStateNormal];
     _lcksBtn.alpha = 0;
     _wjxxBtn.alpha = 0;
     _jkpgBtn.alpha = 0;
@@ -164,7 +166,7 @@
 -(void)comingSearch{
     _clearFlag = NO;
     [self rightNavBtn];
-    [self.navigationController pushViewController:   kVCFromSb(@"ComingSearchViewController", @"Main") animated:YES];
+    [self.navigationController pushViewController:   kVCFromSb(@"ComingSearchResultViewController", @"Main") animated:YES];
 }
 -(void)homeVC{
        [self.navigationController pushViewController:   kVCFromSb(@"HomeViewController", @"Main") animated:YES];

@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+//@class BillAddViewController;
+//
+//@protocol BillAddViewControllerDelegate <NSObject>
+//
+//@optional
+//
+//- (void)VCAddMessageSuccessUpdateMessage:(BillAddViewController *)addVC;
+//
+//@end
+
 @interface BillAddViewController : UIViewController
+//
+//@property(nonatomic,weak)id<BillAddViewControllerDelegate> delegate;
 @property(nonatomic,assign)BOOL isIN;
 @end

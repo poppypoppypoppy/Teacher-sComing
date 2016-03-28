@@ -7,7 +7,9 @@
 //
 
 #import "FoundBaseViewController.h"
+#import "ShowCell.h"
+#import "TeacherComingModel.h"
 
 @interface FoundSearchViewController : FoundBaseViewController
-
+@property(nonatomic,strong)NSMutableArray *messages;
 @end

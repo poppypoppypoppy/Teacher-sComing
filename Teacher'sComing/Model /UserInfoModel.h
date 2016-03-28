@@ -19,7 +19,7 @@
 @property(nonatomic,strong)NSString *address;
 @property(nonatomic,strong)NSString *phoneNumber;
 @property(nonatomic,strong)NSString *note;
-/*
- *......
- */
+
+-(instancetype)initWithIconName:(NSString *)iconName userName:(NSString *)userName userPwd:(NSString *)userPwd sex:(NSString *)sex identity:(NSString *)identity workingPlace:(NSString *)workingPlace address:(NSString *)address phoneNumber:(NSString *)phoneNumber note:(NSString *)note;
++(instancetype)userWithIconName:(NSString *)iconName userName:(NSString *)userName userPwd:(NSString *)userPwd sex:(NSString *)sex identity:(NSString *)identity workingPlace:(NSString *)workingPlace address:(NSString *)address phoneNumber:(NSString *)phoneNumber note:(NSString *)note;
 @end

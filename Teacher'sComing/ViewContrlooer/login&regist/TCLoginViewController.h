@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TCLoginViewController : UIViewController
-
+/*
+ *用户名和密码textfield
+ */
+@property (weak, nonatomic) IBOutlet UITextField *userNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *userPwdTF;
 @end

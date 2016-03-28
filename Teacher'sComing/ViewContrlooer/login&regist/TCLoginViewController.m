@@ -22,11 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *laiLb;
 @property (weak, nonatomic) IBOutlet UILabel *laLb;
 @property (weak, nonatomic) IBOutlet UILabel *markLb;
-/*
- *用户名和密码textfield
- */
-@property (weak, nonatomic) IBOutlet UITextField *userNameTF;
-@property (weak, nonatomic) IBOutlet UITextField *userPwdTF;
+
 /*
  *下方图案
  */
@@ -59,7 +55,7 @@
     [self initData];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(saveData) name:UIApplicationWillTerminateNotification object:nil];
     //登陆界面背景添加毛玻璃效果
-    [GlassView glassView:self.imageView rectX:0 rectY:0 rectW:self.imageView.frame.size.width rectH:self.imageView.frame.size.height];
+//    [GlassView glassView:self.imageView rectX:0 rectY:0 rectW:self.imageView.frame.size.width rectH:self.imageView.frame.size.height];
     //登陆界面控件动画
 //        [self viewAnimationWithDipatch];
     //[self rotationAnimation];
@@ -70,6 +66,8 @@
        [self presentViewController:kVCFromSb(@"TCRegistVCViewController", @"Main") animated:YES completion:nil];
 }
 - (IBAction)login:(id)sender {
+   //初始化进度框，置于当前的View当中
+    [self showProgress];
     /*
      *验证登陆信息
      */
@@ -89,6 +87,7 @@
             }
         }
         if (flag == 1) {
+            [self hideProgress];
             UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"登陆成功" message:@"enjoy!" preferredStyle:UIAlertControllerStyleAlert];
             [self presentViewController:alertC animated:YES completion:nil];
             UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

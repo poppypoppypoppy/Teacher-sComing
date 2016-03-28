@@ -11,17 +11,16 @@
 #import "DetailCell.h"
 #import "ExitCell.h"
 #import "TCInfoViewController.h"
+#import "TCLoginViewController.h"
+
 @interface MyInfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @end
 
 @implementation MyInfoViewController
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+ [self.tableView setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ba20"]]];
 }
 
 #pragma mark - delegate
@@ -31,7 +30,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 3;
+        return 2;
     }else{
         return 7;
     }
@@ -41,16 +40,6 @@
     NSDictionary *dicInfo = [NSDictionary dictionaryWithContentsOfFile:kLoginPath];
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            HeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell"];
-            cell.titleLb.text = @"头像";
-            
-            NSURL *imageURL = [NSURL URLWithString:dicInfo[@"icon"]];
-            NSData *data = [NSData dataWithContentsOfURL:imageURL];
-            UIImage *image = [UIImage imageWithData:data];
-            
-            cell.iconIM.image = image;
-            return cell;
-        }else if (indexPath.row == 1){
             DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell"];
             cell.titleLb.text = @"用户名";
             cell.detailLb.text = dicInfo[@"name"];
@@ -88,46 +77,59 @@
             cell.titleLb.text = @"手机";
             cell.detailLb.text = dicInfo[@"phoneNumber"];
             return cell;
-            
         }else if (indexPath.row == 5){
             DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCell"];
             cell.titleLb.text = @"备注";
             cell.detailLb.text = dicInfo[@"note"];
             return cell;
-            
         }else{
             ExitCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExitCell"];
             [cell.exitBtn setTitle:@"退出" forState:0];
+            [cell.exitBtn addTarget:self action:@selector(exitAPP) forControlEvents:UIControlEventTouchUpInside];
             return cell;
-            
         }
-        
     }
-
+}
+-(void)exitAPP{
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"小狮确认" message:@"您要退出登录？" preferredStyle:UIAlertControllerStyleActionSheet];
+    [self presentViewController:alertC animated:YES completion:nil];
+    /**
+     *为弹出框添加按钮
+     */
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"确认按钮被点击");
+        TCLoginViewController *loginVC = kVCFromSb(@"TCLoginViewController", @"Main");
+        loginVC.userNameTF.text = @"";
+        loginVC.userPwdTF.text = @"";
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }];
+    [alertC addAction:cancelAction];
+    [alertC addAction:okAction];
 }
 
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0&&indexPath.row == 0) {
-        return 90;
-    }else{
         return 50;
-    }
 }
 
 //去除高亮效果
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 0&&indexPath.row == 1) {
-        NSLog(@"修改用户名");
-    }else if (indexPath.section == 0&&indexPath.row == 2){
-        NSLog(@"修改密码");
-    }else if (indexPath.section == 1&&indexPath.row == 6){
-        NSLog(@"退出");
+    if (indexPath.section == 0&&indexPath.row == 0) {
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"小狮提醒" message:@"用户名不可修改哦！" preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:alertC animated:YES completion:nil];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:nil];
+        [alertC addAction:okAction];
+    }else if (indexPath.section == 0&&indexPath.row == 1){
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"小狮提醒" message:@"密码不可修改哦！" preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:alertC animated:YES completion:nil];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:nil];
+        [alertC addAction:okAction];
+
+    }else if(indexPath.section == 1 && indexPath.row == 6){
+        NSLog(@"退出，但被btn覆盖");
     }else{
-        NSLog(@"修改个人信息");
-//        [self.navigationController pushViewController:kVCFromSb(@"TCInfoViewController", @"Main") animated:YES];
-//        [self presentViewController:kVCFromSb(@"TCInfoViewController", @"Main") animated:YES completion:nil];
+        [self.navigationController pushViewController:kVCFromSb(@"TCInfoViewController", @"Main") animated:YES];
     }
 }
 

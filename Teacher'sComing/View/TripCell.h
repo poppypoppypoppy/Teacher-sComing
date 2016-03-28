@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "tripModel.h"
+
 @interface TripCell : UITableViewCell
+
 @property(nonatomic,strong)tripModel *message;
+
 @end

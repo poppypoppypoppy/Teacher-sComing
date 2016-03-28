@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "UserInfoModel.h"
+#import "UserInfoModel.h"
 @interface TeacherComingModel : NSObject
-//@property(nonatomic,strong)UserInfoModel *user;
+@property(nonatomic,strong)UserInfoModel *user;
 @property(nonatomic,strong)NSString *title;
+@property(nonatomic,strong)NSString *createtime;
 @property(nonatomic,strong)NSString *time;
 @property(nonatomic,strong)NSString *money;
 @property(nonatomic,strong)NSString *detail;
 @property(nonatomic,strong)UIImage *iconIM;
 @property(nonatomic,strong)NSString *address;
--(instancetype)initWithIconIM:(UIImage *)image time:(NSString *)time title:(NSString *)title money:(NSString *)money detail:(NSString *)detail address:(NSString *)address;
-+(instancetype)teacherWithIconIM:(UIImage *)image time:(NSString *)time title:(NSString *)title money:(NSString *)money detail:(NSString *)detail address:(NSString *)address;
+-(instancetype)initWithIconIM:(UIImage *)image time:(NSString *)time title:(NSString *)title money:(NSString *)money detail:(NSString *)detail address:(NSString *)address user:(UserInfoModel *)user createtime:(NSString *)createtime;
++(instancetype)teacherWithIconIM:(UIImage *)image time:(NSString *)time title:(NSString *)title money:(NSString *)money detail:(NSString *)detail address:(NSString *)address user:(UserInfoModel *)user createtime:(NSString *)createtime;
 @end

@@ -19,6 +19,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Bmob registerWithAppKey:@"a4f1c887c74453775e1a3804eafc45df"];
+    
+//    // 要使用百度地图，请先启动BaiduMapManager
+//    _mapManager = [[BMKMapManager alloc]init];
+//    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+//    BOOL ret = [_mapManager start:@"BmXe5qV9fBncu2DdPOoapSqL"  generalDelegate:nil];
+//    if (!ret) {
+//        NSLog(@"manager start failed!");
+//    }
+//    
+//    
+//    // Add the navigation controller's view to the window and display.
+//    [self.window addSubview:navigationController.view];
+//    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

@@ -54,11 +54,7 @@
                             NSString *createdAt = [obj objectForKey:@"createdAt"];
                             
                             NSString *money = [obj objectForKey:@"money"];
-//                            
-//                            NSURL *imageURL = [NSURL URLWithString:dicLogin[@"icon"]];
-//                            NSData *data = [NSData dataWithContentsOfURL:imageURL];
-//                            UIImage *image = [UIImage imageWithData:data];
-                            
+
                             billModel *message = [billModel billWithTime:createdAt money:money detail:detail];
                             [_messageArray addObject:message];
                         }
@@ -70,12 +66,15 @@
     }];
     
 }
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.messageArray.count;
 }
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     billCell *cell = [tableView dequeueReusableCellWithIdentifier:@"billCell"];
     
@@ -93,11 +92,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.tableFooterView = [UIView new];
-    self.tableView.userInteractionEnabled = NO;
+      [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithTitle:@"add" style:UIBarButtonItemStyleDone target:self action:@selector(addVC)];
-    self.navigationItem.rightBarButtonItem = rightItem;
+     [self.tableView setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ba25"]]];
+    self.tableView.tableFooterView = [UIView new];
+
+    UIButton *btn= [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(281, 7, 30, 30)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(addVC) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
     self.isIn = !self.segmentedControl.selectedSegmentIndex;
 }
 
@@ -106,8 +112,46 @@
     BillAddViewController *vc = [storyboard instantiateInitialViewController];
     vc = [storyboard instantiateViewControllerWithIdentifier:@"BillAddViewController"];
     vc.isIN = self.isIn;
+//    vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+//#pragma mark -BillAddViewControllerDelegate
+//
+//- (void)VCAddMessageSuccessUpdateMessage:(BillAddViewController *)addVC {
+//
+//    self.messageArray = nil;
+//    [self.tableView reloadData];
+//
+//}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 70;
-}@end
+}
+
+#pragma mark - 表格编辑模式的2问1答
+
+//问1：行 是否可以编辑
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return YES;
+    
+}
+
+//问2：行 是何种编辑样式
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return UITableViewCellEditingStyleDelete;
+    
+}
+
+//答1 确认提交编辑动作
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //1.修改数据模型中的数据
+    [self.messageArray removeObjectAtIndex:indexPath.row];
+    //2.更新界面
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+    DDLogVerbose(@"delete");
+}
+
+@end

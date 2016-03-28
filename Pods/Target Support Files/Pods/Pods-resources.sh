@@ -58,6 +58,7 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "FlatUIKit/Resources/flat-ui-icons-regular.ttf"
   install_resource "FlatUIKit/Resources/Lato-Bold.ttf"
   install_resource "FlatUIKit/Resources/Lato-Italic.ttf"
@@ -66,6 +67,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "FlatUIKit/Resources/flat-ui-icons-regular.ttf"
   install_resource "FlatUIKit/Resources/Lato-Bold.ttf"
   install_resource "FlatUIKit/Resources/Lato-Italic.ttf"

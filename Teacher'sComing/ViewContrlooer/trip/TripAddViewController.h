@@ -7,18 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-@class TripAddViewController;
-
-@protocol TripAddViewControllerDelegate <NSObject>
-
-@optional
-
-- (void)VCAddMessageSuccessUpdateMessage:(TripAddViewController *)addVC;
-
-@end
+//@class TripAddViewController;
+//
+//@protocol TripAddViewControllerDelegate <NSObject>
+//
+//@optional
+//
+//- (void)VCAddMessageSuccessUpdateMessage:(TripAddViewController *)addVC;
+//
+//@end
 
 @interface TripAddViewController : UIViewController
 
-@property(nonatomic,weak)id<TripAddViewControllerDelegate> delegate;
+//@property(nonatomic,weak)id<TripAddViewControllerDelegate> delegate;
 
 @end

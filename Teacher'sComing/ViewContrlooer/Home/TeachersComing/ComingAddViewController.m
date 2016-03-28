@@ -21,9 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-       self.title = @"ComingAdd";
+       self.title = @"添加";
 }
 - (IBAction)finishBtn:(id)sender {
+    if ([self.subjectTF.text isEqualToString:@""]||[self.time.text isEqualToString:@""]||[self.money.text isEqualToString:@""]||[self.detail.text isEqualToString:@""]) {
+        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode=MBProgressHUDModeText;//只显示label
+        hud.labelText = @"请填写完整信息！";
+        [hud hide:YES afterDelay:2];
+    }else{
     BmobObject  *coming = [BmobObject objectWithClassName:@"coming"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:kLoginPath];
     /**根据用户名查找id*/
@@ -42,12 +48,21 @@
                     if (error) {
                         NSLog(@"%@",error);
                     }else{
-                        NSLog(@"finish");
+                        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"小狮祝贺" message:@"添加信息成功！" preferredStyle:UIAlertControllerStyleAlert];
+                        [self presentViewController:alertC animated:YES completion:nil];
+                        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:nil];
+                        [alertC addAction:okAction];
                     }
                 }];
             }
         }
     }];
+    }
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+- (IBAction)close:(id)sender {
 }
 
 @end

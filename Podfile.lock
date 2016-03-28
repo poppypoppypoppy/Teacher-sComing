@@ -1,4 +1,5 @@
 PODS:
+  - BaiduMapKit (2.9.1)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -15,28 +16,43 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - BmobSDK (1.6.5)
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
   - FlatUIKit (1.6.2)
   - Masonry (0.6.3)
   - MBProgressHUD (0.9.1)
-  - MJRefresh (3.0.2)
+  - MJRefresh (3.0.7)
   - RESideMenu (4.0.7)
+  - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
+  - BaiduMapKit
   - BlocksKit
   - BmobSDK
+  - CocoaLumberjack
   - FlatUIKit
   - Masonry
   - MBProgressHUD
   - MJRefresh
   - RESideMenu
+  - SWTableViewCell
 
 SPEC CHECKSUMS:
+  BaiduMapKit: 97d2d44b41a876de2371fb91ddf78cdf84dafa05
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   BmobSDK: 9928a9135a3a7823c6d8bd2bcd9baffeb8e6289a
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  MJRefresh: 85377dc8c70395cf329e102a5c55505ef387c2e1
+  MJRefresh: f3e1228ec3d38c7ba5208d58032631a52f39f495
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 
 COCOAPODS: 0.39.0
